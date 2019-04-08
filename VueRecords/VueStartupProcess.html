@@ -1,0 +1,1144 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Vue 项目启动过程分析 · LYF_Records</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="LYF">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="VueBuildupProcess.html" />
+    
+    
+    <link rel="prev" href="VueContent.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../Gitbook/">
+            
+                <a href="../Gitbook/">
+            
+                    
+                    Gitbook
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../Gitbook/GitbookExpandableChapters.html">
+            
+                <a href="../Gitbook/GitbookExpandableChapters.html">
+            
+                    
+                    Gitbook 设置折叠目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../Webpack/">
+            
+                <a href="../Webpack/">
+            
+                    
+                    Webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../NodeJS/">
+            
+                <a href="../NodeJS/">
+            
+                    
+                    NodeJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../HTMLRecords/">
+            
+                <a href="../HTMLRecords/">
+            
+                    
+                    Part I: HTML Records
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../HTMLRecords/HTMLSetIcon.html">
+            
+                <a href="../HTMLRecords/HTMLSetIcon.html">
+            
+                    
+                    HTML 为网页添加图标
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../CSSRecords/">
+            
+                <a href="../CSSRecords/">
+            
+                    
+                    Part II: CSS Records
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../CSSRecords/CSSHideScrollBar.html">
+            
+                <a href="../CSSRecords/CSSHideScrollBar.html">
+            
+                    
+                    CSS 隐藏滚动条
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../JSRecords/">
+            
+                <a href="../JSRecords/">
+            
+                    
+                    Part III: JS Records
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../JSRecords/JSDebugUEditorMultipleUpload.html">
+            
+                <a href="../JSRecords/JSDebugUEditorMultipleUpload.html">
+            
+                    
+                    JS DEBUG UEditor多图上传报错
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Part IV: Vue Records
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="VueGenerateTemplate.html">
+            
+                <a href="VueGenerateTemplate.html">
+            
+                    
+                    Vue 生成初始模板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="VueContent.html">
+            
+                <a href="VueContent.html">
+            
+                    
+                    Vue 目录结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.4.3" data-path="VueStartupProcess.html">
+            
+                <a href="VueStartupProcess.html">
+            
+                    
+                    Vue 项目启动过程分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="VueBuildupProcess.html">
+            
+                <a href="VueBuildupProcess.html">
+            
+                    
+                    Vue 项目执行流程分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5" data-path="VueImportVueRouter.html">
+            
+                <a href="VueImportVueRouter.html">
+            
+                    
+                    Vue 使用 vue-router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.6" data-path="VueImportECharts.html">
+            
+                <a href="VueImportECharts.html">
+            
+                    
+                    Vue 使用 ECharts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.7" data-path="VueImportElementUI.html">
+            
+                <a href="VueImportElementUI.html">
+            
+                    
+                    Vue 使用 Element-UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.8" data-path="VueImportIconfont.html">
+            
+                <a href="VueImportIconfont.html">
+            
+                    
+                    Vue 使用 Iconfont
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.9" data-path="VueImportBMap.html">
+            
+                <a href="VueImportBMap.html">
+            
+                    
+                    Vue 使用 BMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.10" data-path="VueBindVueRouterToMenu.html">
+            
+                <a href="VueBindVueRouterToMenu.html">
+            
+                    
+                    Vue 将路由绑定到菜单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.11" data-path="VueExportExcelFromElTable.html">
+            
+                <a href="VueExportExcelFromElTable.html">
+            
+                    
+                    Vue 从el-table导出excel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.12" data-path="VueUploadFile.html">
+            
+                <a href="VueUploadFile.html">
+            
+                    
+                    Vue 上传文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.13" data-path="VueDownloadFile.html">
+            
+                <a href="VueDownloadFile.html">
+            
+                    
+                    Vue 下载文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../VueDesign/">
+            
+                <a href="../VueDesign/">
+            
+                    
+                    Part IV+: Vue Design
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="../VueDesign/Start.html">
+            
+                <a href="../VueDesign/Start.html">
+            
+                    
+                    Vue Design 初步设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="../VueDesign/Layout.html">
+            
+                <a href="../VueDesign/Layout.html">
+            
+                    
+                    Vue Design 布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="../VueDesign/DetailNote.html">
+            
+                <a href="../VueDesign/DetailNote.html">
+            
+                    
+                    Vue Design 详细设计 笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../Notes/">
+            
+                <a href="../Notes/">
+            
+                    
+                    Part X: Notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../Java/">
+            
+                <a href="../Java/">
+            
+                    
+                    Part I: Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../Java/Base.html">
+            
+                <a href="../Java/Base.html">
+            
+                    
+                    Java 基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../Java/InstallAndConfig.html">
+            
+                <a href="../Java/InstallAndConfig.html">
+            
+                    
+                    Java 安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../Java/HelloWorld.html">
+            
+                <a href="../Java/HelloWorld.html">
+            
+                    
+                    Java HelloWorld
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../Java/TomcatInstallAndConfig.html">
+            
+                <a href="../Java/TomcatInstallAndConfig.html">
+            
+                    
+                    Java Tomcat安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../Java/DebugUnrecognizedZh.html">
+            
+                <a href="../Java/DebugUnrecognizedZh.html">
+            
+                    
+                    Java Debug 中文乱码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../MySQL/">
+            
+                <a href="../MySQL/">
+            
+                    
+                    Part I: MySQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../MySQL/AccountAndPassword.html">
+            
+                <a href="../MySQL/AccountAndPassword.html">
+            
+                    
+                    MySQL 账号密码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../MySQL/InstallAndConfig.html">
+            
+                <a href="../MySQL/InstallAndConfig.html">
+            
+                    
+                    MySQL 安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../MySQL/SystemDB.html">
+            
+                <a href="../MySQL/SystemDB.html">
+            
+                    
+                    MySQL 系统数据库介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../MySQL/BasicOperation.html">
+            
+                <a href="../MySQL/BasicOperation.html">
+            
+                    
+                    MySQL 基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="../MySQL/DebugOfDenied.html">
+            
+                <a href="../MySQL/DebugOfDenied.html">
+            
+                    
+                    MySQL Debug Install/Remove of the Service Denied
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../MongoDB/">
+            
+                <a href="../MongoDB/">
+            
+                    
+                    Part II: MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../IDEA/">
+            
+                <a href="../IDEA/">
+            
+                    
+                    Part I: IDEA
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../IDEA/Install.html">
+            
+                <a href="../IDEA/Install.html">
+            
+                    
+                    IDEA 安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../IDEA/ConfigTomcat.html">
+            
+                <a href="../IDEA/ConfigTomcat.html">
+            
+                    
+                    IDEA 配置Tomcat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.3" data-path="../IDEA/DebugUnrecognizedZh.html">
+            
+                <a href="../IDEA/DebugUnrecognizedZh.html">
+            
+                    
+                    IDEA Debug 中文乱码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../Navicat/">
+            
+                <a href="../Navicat/">
+            
+                    
+                    Part II: Navicat
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="../Navicat/InstallAndConfig.html">
+            
+                <a href="../Navicat/InstallAndConfig.html">
+            
+                    
+                    Navicat 安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../Eclipse/">
+            
+                <a href="../Eclipse/">
+            
+                    
+                    Part III: Eclipse
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.3.1" data-path="../Eclipse/InstallAndConfig.html">
+            
+                <a href="../Eclipse/InstallAndConfig.html">
+            
+                    
+                    Eclipse 安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../Atom/">
+            
+                <a href="../Atom/">
+            
+                    
+                    Part IV: Atom
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.4.1" data-path="../Atom/SyncSetting.html">
+            
+                <a href="../Atom/SyncSetting.html">
+            
+                    
+                    Atom 配置 sync-setting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Vue 项目启动过程分析</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="vue-&#x9879;&#x76EE;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;&#x5206;&#x6790;">Vue &#x9879;&#x76EE;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;&#x5206;&#x6790;</h1>
+<p>&#x5C06;&#x9879;&#x76EE;&#x4ECE;&#x5F00;&#x59CB;&#x542F;&#x52A8;,&#x5230;&#x751F;&#x6210;&#x53EF;&#x8FD0;&#x884C;&#x4EE3;&#x7801;&#x7684;&#x8FC7;&#x7A0B;&#x8BB0;&#x5F55;&#x5728;&#x6B64;.</p>
+<h2 id="npm-start">npm start</h2>
+<p>&#x9996;&#x5148;,&#x9700;&#x8981;&#x4E86;&#x89E3;&#x4E00;&#x4E0B; <strong>npm</strong> &#x547D;&#x4EE4;,&#x8BF7;&#x67E5;&#x770B; <a href="https://www.npmjs.cn/" target="_blank">NPM &#x5B98;&#x7F51;</a></p>
+<p>&#x5728;&#x5F00;&#x53D1;&#x7248;&#x672C;&#x4E2D;,&#x4F7F;&#x7528; <code>npm start</code> &#x547D;&#x4EE4;&#x8FD0;&#x884C;&#x6B64;&#x9879;&#x76EE;.
+&#x5728; package.json &#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#x7684; &quot;scripts&quot; &#x5BF9;&#x8C61;&#x4E2D;&#x67E5;&#x627E; &quot;start&quot; &#x5C5E;&#x6027;&#xFF0C; &#x5982;&#x679C;&#x6B64;&#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#x4E86;&#x4EFB;&#x4F55;&#x547D;&#x4EE4;&#x5219;&#x6267;&#x884C;&#x4E4B;&#x3002; &#x5982;&#x679C; &quot;scripts&quot; &#x5BF9;&#x8C61;&#x4E2D;&#x6CA1;&#x6709;&#x5B9A;&#x4E49; &quot;start&quot; &#x5C5E;&#x6027;&#xFF0C; &#x9ED8;&#x8BA4;&#x6267;&#x884C; node server.js &#x547D;&#x4EE4;&#x3002;
+&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x547D;&#x4EE4;:</p>
+<pre><code>  &quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;webpack-dev-server --inline --progress --config build/webpack.dev.conf.js&quot;,
+    &quot;start&quot;: &quot;npm run dev&quot;,
+    &quot;unit&quot;: &quot;jest --config test/unit/jest.conf.js --coverage&quot;,
+    &quot;e2e&quot;: &quot;node test/e2e/runner.js&quot;,
+    &quot;test&quot;: &quot;npm run unit &amp;&amp; npm run e2e&quot;,
+    &quot;build&quot;: &quot;node build/build.js&quot;
+  },
+</code></pre><p>&#x5373;&#x6267;&#x884C;&#x4E86; <code>npm run dev</code> &#x547D;&#x4EE4;,&#x5176;&#x4E2D; <code>npm run</code> &#x662F; <code>npm run-script</code> &#x7684;&#x522B;&#x540D;,&#x6545;&#x5B9E;&#x9645;&#x6267;&#x884C;&#x4E86; <code>npm run-script dev</code>. &#x8FD9;&#x4F1A;&#x6267;&#x884C; package.json &#x4E2D;&#x5B9A;&#x4E49;&#x7684; scripts.dev &#x6307;&#x5B9A;&#x7684;&#x547D;&#x4EE4;,&#x6545;&#x6700;&#x7EC8;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;&#x4E3A;</p>
+<pre><code>$ webpack-dev-server --inline --progress --config build/webpack.dev.conf.js
+</code></pre><p>&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x8F6C;&#x5230;&#x4E86; webpack &#x7684;&#x914D;&#x7F6E;&#x4E0A;.</p>
+<h2 id="webpack">webpack</h2>
+<p>&#x9996;&#x5148;,&#x9700;&#x8981;&#x4E86;&#x89E3;&#x4E00;&#x4E0B; <strong>webpack</strong>,&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x73B0;&#x5728;&#x6700;&#x6D41;&#x884C;&#x7684;&#x4EE3;&#x7801;&#x6253;&#x5305;&#x5DE5;&#x5177;,&#x53EF;&#x8FDB;&#x5165; <a href="https://www.webpackjs.com/" target="_blank">webpack &#x4E2D;&#x6587;&#x7F51;</a> &#x5B66;&#x4E60;&#x4F7F;&#x7528;.
+&#x7136;&#x540E;,&#x4ED4;&#x7EC6;&#x9605;&#x8BFB; <a href="https://www.webpackjs.com/guides/development/#%E4%BD%BF%E7%94%A8-webpack-dev-server" target="_blank">webpack-dev-server &#x7684;&#x4F7F;&#x7528;</a>
+&#x7B80;&#x800C;&#x8A00;&#x4E4B;, webpack-dev-server &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A; &#x57FA;&#x4E8E;webpack&#x7684;&#x53EF;&#x4EE5;&#x70ED;&#x52A0;&#x8F7D;&#x7684;WEB&#x670D;&#x52A1;&#x5668;.</p>
+<h3 id="&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
+<p>&#x627E;&#x5230;&#x914D;&#x7F6E;&#x6587;&#x4EF6; build/webpack.dev.conf.js, &#x53EF;&#x4EE5;&#x9010;&#x884C;&#x9605;&#x8BFB;,&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4E00;&#x5171;&#x4E5F;&#x4E0D;&#x5230;100&#x884C;.
+&#x5148;&#x770B;&#x5BFC;&#x51FA;:</p>
+<pre><code>module.exports = new Promise((resolve, reject) =&gt; {
+  portfinder.basePort = process.env.PORT || config.dev.port
+  portfinder.getPort((err, port) =&gt; {
+      ....
+      resolve(devWebpackConfig)
+    }
+  })
+})
+</code></pre><p>&#x53D1;&#x73B0;&#x8FD4;&#x56DE;&#x4E86;&#x4E00;&#x4E2A;&#x53D8;&#x91CF; devWebpackConfig, &#x627E;&#x5230;&#x5B9A;&#x4E49;:</p>
+<pre><code>const config = require(&apos;../config&apos;)
+const merge = require(&apos;webpack-merge&apos;)
+const baseWebpackConfig = require(&apos;./webpack.base.conf&apos;)
+const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;)
+....
+const devWebpackConfig = merge(baseWebpackConfig, {
+  ....
+  // these devServer options should be customized in /config/index.js
+  devServer: {
+    ....
+    host: HOST || config.dev.host,
+    port: PORT || config.dev.port,
+    ....
+  },
+  plugins: [
+    ....
+    // https://github.com/ampedandwired/html-webpack-plugin
+    new HtmlWebpackPlugin({
+      filename: &apos;index.html&apos;,
+      template: &apos;index.html&apos;,
+      inject: true
+    }),
+    ....
+  ]
+})
+</code></pre><p>&#x7531;&#x6B64;&#x53EF;&#x89C1; devWebpackConfig &#x662F;&#x5728; ./webpack.base.conf &#x7684;&#x57FA;&#x7840;&#x4E0A;,&#x901A;&#x8FC7; webpack-merge &#x5DE5;&#x5177;&#x8FDB;&#x884C;&#x8FDB;&#x4E00;&#x6B65;&#x5408;&#x5E76;&#x7684;.</p>
+<p>&#x6839;&#x636E; devServer.host &#x548C; devServer.port &#x53EF;&#x4EE5;&#x627E;&#x5230;&#x4F7F;&#x7528; webpack-dev-server &#x542F;&#x52A8;&#x7684;&#x670D;&#x52A1;&#x5668;&#x6216;&#x5728;&#x54EA;&#x91CC;&#x542F;&#x52A8;.
+&#x67E5;&#x770B; root/config/index.js ,&#x627E;&#x5230;&#x914D;&#x7F6E;</p>
+<pre><code>module.exports = {
+  dev: {
+    ....
+    host: &apos;localhost&apos;, // can be overwritten by process.env.HOST
+    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    ....
+  },
+  ....
+}
+</code></pre><blockquote>
+<p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F97;&#x51FA;&#x542F;&#x52A8;&#x7684;WEB&#x670D;&#x52A1;&#x4F1A;&#x5728; <code>localhost:8080</code> &#x542F;&#x52A8;,&#x8FD9;&#x4E5F;&#x662F;&#x4E4B;&#x540E;&#x4F7F;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE;&#x7684;&#x5730;&#x5740;.
+&#x540C;&#x65F6;&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x4F7F;&#x7528;&#x4E86;&#x63D2;&#x4EF6; <a href="https://github.com/ampedandwired/html-webpack-plugin" target="_blank">HtmlWebpackPlugin</a>
+&#x9605;&#x8BFB;&#x5BF9;&#x5E94;&#x6587;&#x6863;&#x53EF;&#x77E5;,&#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;&#x89C4;&#x5B9A;&#x4E86;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x8981;&#x4F7F;&#x7528;&#x7684;html&#x6A21;&#x677F;: <code>root/index.html</code> ,&#x5F53;webpack&#x5C06;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x6253;&#x5305;&#x5B8C;&#x4EE5;&#x540E;,&#x4F1A;&#x4EE5; <code>&lt;script&gt;&#x6807;&#x7B7E;</code> &#x7684;&#x5F62;&#x5F0F;&#x63D2;&#x5165;&#x5230;html&#x6587;&#x4EF6;&#x4E2D;</p>
+</blockquote>
+<p>&#x67E5;&#x770B; webpack.base.conf, &#x53EF;&#x4EE5;&#x770B;&#x5230;</p>
+<pre><code>const config = require(&apos;../config&apos;)
+....
+module.exports = {
+  context: path.resolve(__dirname, &apos;../&apos;),
+  entry: {
+    app: &apos;./src/main.js&apos;
+  },
+  output: {
+    path: config.build.assetsRoot,
+    filename: &apos;[name].js&apos;,
+    publicPath: process.env.NODE_ENV === &apos;production&apos;
+      ? config.build.assetsPublicPath
+      : config.dev.assetsPublicPath
+  },
+  ....
+}
+</code></pre><p>&#x9879;&#x76EE;&#x5165;&#x53E3;&#x4E3A; <code>root/src/main.js</code>, &#x51FA;&#x53E3;&#x4E3A; <code>require(&apos;../config&apos;).build.assetsRoot</code>, &#x53EF;&#x4EE5;&#x6D4F;&#x89C8;&#x6B64;&#x6587;&#x4EF6;&#x5F97;&#x51FA;,&#x9879;&#x76EE;&#x51FA;&#x53E3;&#x4E3A; <code>root/dist</code>.</p>
+<h3 id="webpack&#x914D;&#x7F6E;&#x603B;&#x7ED3;">webpack&#x914D;&#x7F6E;&#x603B;&#x7ED3;</h3>
+<p>&#x7531;&#x4E0A;&#x8FF0;&#x914D;&#x7F6E;&#x53EF;&#x89C1;,&#x6B64;&#x9879;&#x76EE;&#x4F7F;&#x7528;webapck&#x8FDB;&#x884C;&#x9879;&#x76EE;&#x6253;&#x5305;&#x548C;&#x6784;&#x5EFA;.
+&#x4EE5; <code>root/index.html</code> &#x4E3A;&#x6A21;&#x677F;, &#x4EE5; <code>root/src/main.js</code> &#x4E3A;&#x6253;&#x5305;&#x5165;&#x53E3;, &#x4EE5; <code>root/dist/</code> &#x4E3A;&#x6253;&#x5305;&#x51FA;&#x53E3;.
+WEB&#x670D;&#x52A1;&#x542F;&#x52A8;&#x4F4D;&#x7F6E;&#x4E3A; <code>localhost:8080</code> .
+&#x4F46;&#x662F;&#x5728;&#x4F7F;&#x7528; webpack-dev-server &#x8FDB;&#x884C;&#x672C;&#x5730;&#x9879;&#x76EE;&#x542F;&#x52A8;&#x65F6;,&#x6240;&#x6709;&#x7684;&#x6253;&#x5305;&#x597D;&#x7684;&#x6587;&#x4EF6;&#x5747;&#x4FDD;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x4E2D;,&#x6CA1;&#x6709;&#x751F;&#x6210;&#x5B9E;&#x9645;&#x7684;&#x78C1;&#x76D8;&#x6587;&#x4EF6;,&#x6545;&#x6253;&#x5305;&#x7ED3;&#x679C;&#x4EE5; <strong>&#x6D4F;&#x89C8;&#x5668;&#x53EF;&#x8BBF;&#x95EE;</strong> &#x4E3A;&#x51C6;.</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; LYF_Studio 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Edit:
+2019-04-03 11:25:58
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="VueContent.html" class="navigation navigation-prev " aria-label="Previous page: Vue 目录结构">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="VueBuildupProcess.html" class="navigation navigation-next " aria-label="Next page: Vue 项目执行流程分析">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Vue 项目启动过程分析","level":"3.4.3","depth":2,"next":{"title":"Vue 项目执行流程分析","level":"3.4.4","depth":2,"path":"VueRecords/VueBuildupProcess.md","ref":"VueRecords/VueBuildupProcess.md","articles":[]},"previous":{"title":"Vue 目录结构","level":"3.4.2","depth":2,"path":"VueRecords/VueContent.md","ref":"VueRecords/VueContent.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","advanced-emoji","copy-code-button","expandable-chapters-small","github","search-plus","sharing-plus","splitter","tbfed-pagefooter"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy LYF_Studio 2019","modify_label":"Last Edit:","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/liyf7218"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"LYF","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LYF_Records","language":"zh-hans","links":{"sidebar":{}},"gitbook":">=3.0.0","description":"LYF's gitbook repository"},"file":{"path":"VueRecords/VueStartupProcess.md","mtime":"2019-04-03T03:25:58.422Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-08T02:14:08.352Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
